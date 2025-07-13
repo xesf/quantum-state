@@ -7,4 +7,7 @@ install:
 docs:
 	bundle exec jekyll serve --watch
 
+run:
+	http-server ./src -c-1 -p 4040
+
 .PHONY: docs

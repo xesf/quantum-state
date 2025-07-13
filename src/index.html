@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quantum State - Episode 1</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="manifest" href="manifest.json">
+        <!-- <link rel="apple-touch-icon" href="assets/icon.png"> -->
+        <!-- <link rel="shortcut icon" href="assets/favicon_white.ico" media="(prefers-color-scheme: dark)"/>
+        <link rel="shortcut icon" href="assets/favicon.ico" media="(prefers-color-scheme: light)" /> -->
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+        <canvas id="renderer"></canvas>
+        <canvas id="ui"></canvas>
+
+        <script type="module">
+            import * as QS from './quantum-state.mjs'
+
+            window.URL = window.URL || window.webkitURL
+            window.QS = QS
+                    
+            import { Game } from './quantum-state.mjs'
+            const game = new Game()
+
+            window.addEventListener('resize', () => {
+                game.set_size()
+            })
+
+            game.run()
+        </script>
+    </body>
+</html>

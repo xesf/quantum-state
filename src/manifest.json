@@ -1,0 +1,7 @@
+{
+  "name": "Quantum State",
+  "short_name": "quantum-state",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone"
+}
