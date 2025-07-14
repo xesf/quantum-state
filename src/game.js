@@ -1,3 +1,4 @@
+import Renderer from './renderer.js'
 
 class Game {
     constructor(config) {
@@ -14,23 +15,29 @@ class Game {
         }
         this.is_running = false
         this.canvas = null
-
-        this.initialise()
+        this.renderer = null
     }
 
-    initialise() {
+    async initialise() {
         const canvas = document.createElement('canvas')
         canvas.id = 'renderer'
         canvas.className = 'game-container'
         document.body.appendChild(canvas)
 
         this.canvas = canvas
+        this.renderer = new Renderer(canvas, this.config.renderer)
+        await this.renderer.initialise()
     }
 
-    run() {
+    async run() {
     }
 
     set_size() {
+        const width = window.innerWidth
+        const height = window.innerHeight
+        this.config.renderer.width = width
+        this.config.renderer.height = height
+        // this.renderer.set_size(width, height, this.camera)
     }
 
     pause() {

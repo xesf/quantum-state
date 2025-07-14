@@ -22,6 +22,7 @@
                     
             import { Game } from './quantum-state.mjs'
             const game = new Game()
+            await game.initialise()
 
             window.addEventListener('resize', () => {
                 game.set_size()
