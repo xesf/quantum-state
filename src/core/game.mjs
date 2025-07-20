@@ -35,7 +35,24 @@ const game_run = (game) => {
         game.last_render_time = now
 
         ui_clear()
-        ui_draw_text(`FPS: ${Math.round(fps)}`, 10, 20, 'blue', '16px Patua One')
+        ui_draw_text(
+            10,
+            window.innerHeight - 20,
+            `FPS: ${Math.round(fps)}`,
+            { color: 'blue', font: '16px Patua One' }
+        )
+
+        // ui_draw_text(
+        //     10,
+        //     20,
+        //     `Quantum State`,
+        //     { 
+        //         color: 'white',
+        //         font: '24px Patua One',
+        //         shadow: true,
+        //         background_color: 'rgba(0, 0, 0, 0.5)'
+        //     }
+        // )
 
         // game.renderer.render()
         requestAnimationFrame(game_loop)
